@@ -1,5 +1,7 @@
+
 import Leftsidebar from "@/components/homepage/news/Leftsidebar";
 import Image from "next/image";
+import Rightsidebar from "@/components/homepage/Rightsidebar";
  async function getCategories() {
 const res = await fetch ('https://openapi.programming-hero.com/api/news/categories')
 const data = await res.json()
@@ -18,9 +20,11 @@ const categories = categoriesData.data.news_category;
     <div className="font-bold text-3xl bg-red-400 col-span-6"> 
       All news
       </div>
-       <div className="font-bold text-3xl bg-blue-400 col-span-3"> 
-     social icons 
+       <div className=" col-span-3"> 
+     
+     <Rightsidebar></Rightsidebar>
       </div>
+      
   </div>
   );
 }
