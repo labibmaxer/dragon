@@ -1,3 +1,4 @@
+import Leftsidebar from "@/components/homepage/news/Leftsidebar";
 import Image from "next/image";
  async function getCategories() {
 const res = await fetch ('https://openapi.programming-hero.com/api/news/categories')
@@ -12,12 +13,7 @@ const categories = categoriesData.data.news_category;
   return (
   <div className="grid grid-cols-12 mt-10 container mx-auto ">
     <div className="font-bold text-3xl col-span-3"> 
-     <h1 className='font-bold text-lg'>All categories</h1>
-      <ul clasName='flex flex-col gap-3 mt-6 '>
-        {categories?.map((category) => (
-          <li key={category.catagory_id} className="bg-slate-100 p-2 rounded-md font-bold text-center text-lg ">{category.category_name}</li>
-        ))}
-      </ul>
+    <Leftsidebar categories={categories} activeid={null}></Leftsidebar>
     </div>
     <div className="font-bold text-3xl bg-red-400 col-span-6"> 
       All news
